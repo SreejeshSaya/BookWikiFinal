@@ -8,36 +8,11 @@
 	<link rel="shortcut icon" type="images/x-icon" href="images/icon.png" />
 	<link href="bootstrap-4.3.1-dist/css/bootstrap.min.css" rel="stylesheet">
 	<link href="conf.css" rel="stylesheet">
+	<link href="mainPage.css" rel="stylesheet">
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 <body>
-	<ul id="contextMenu">
-		<li class="menuItems" id="1" onclick="bg()">change bg</li>
-		<li class="menuItems" id="2">Sign Out</li>
-		<li class="menuItems" id="3">Reload</li>
-		<li class="menuItems" id="4">Print</li>
-		<li class="menuItems" id="5">Inspect</li>
-	</ul>
-
-	<div class="slideshow-container">
-
-			<div class="mySlides fade">
-			  <img src="books.jpg" style="width:1480px; height:500px;">
-			  <div class="text">Caption Text</div>
-			</div>
-			
-			<div class="mySlides fade">
-			  <img src="Books4.jpg" style="width:1480px; height:500px;">
-			  <div class="text">Caption Two</div>
-			</div>
-			<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-			<a class="next" onclick="plusSlides(1)">&#10095;</a>
-		</div>
-		<br>
-		<div style="text-align:center">
-		  <span class="dot" onclick="currentSlide(1)"></span> 
-		  <span class="dot" onclick="currentSlide(2)"></span>  
-		</div>
-
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 		<a class="navbar-brand" href="mainPage.php"><img src="images/icon.png" style="height:3	0px;width:40px"> BookWiki</a> 
 	
@@ -60,7 +35,65 @@
 			</li>
 		</ul>
 	</nav>
+	<ul id="contextMenu">
+		<li class="menuItems" id="1">change bg</li>
+		<li class="menuItems" id="2">Reload</li>
+		<li class="menuItems" id="3" onclick="bt()">Back To Top</li>
+	</ul>	
+	<div id="slider">
+		<div id="box">
+			<img src="book1.jpg">
+		</div>
 
+		<!-- buttons for controls slider -->
+		<button id="pi" class="prew fa fa-chevron-left" onclick="prewImage()"></button>
+		<button id="ni" class="next fa fa-chevron-right" onclick="nextImage()"></button>
+	</div>
+	<!-- <table class="Table">
+	<col width="1500">
+	<col width="500">
+	<tr>
+	<th class="Sell">Hot selling books</th>
+	<th class="News">Announcements/News</th>
+	</tr>
+	<tr>
+	<td class="col1">
+		<a href="" class="hb" style="display:inline; text-align:center;"><p class=""><pre>This is the book ranked number 1</pre></p></a>
+		<a href="" class="hb" style="display:inline; text-align:center;"><p class=""><pre>This is the book ranked number 2</pre></p></a>
+		<a href="" class="hb" style="display:inline; text-align:center;"><p class=""><pre>This is the book ranked number 3</pre></p></a>
+		<a href="" class="hb" style="display:inline; text-align:center;"><p class=""><pre>This is the book ranked number 4</pre></p></a>
+		<a href="" class="hb" style="display:inline; text-align:center;"><p class=""><pre>This is the book ranked number 5</pre></p></a>
+	</td>
+	<td>
+		<a href="" class="links"><p class="article">This is news article number 1</p></a>
+		<a href="" class="links"><p class="article">This is news article number 2</p></a>
+		<a href="" class="links"><p class="article">This is news article number 3</p></a>
+		<a href="" class="links"><p class="article">This is news article number 4</p></a>
+	</td>
+	</tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr></tr>
+	<tr>
+	<th class="Sell">Bestselling books</th>
+	</tr>
+	<tr>
+	<td class="col1">
+		<a href="https://www.google.com/" class="hb" style="display:inline; text-align:center;"><p class=""><pre>This is the book ranked number 1</pre></p></a>
+		<a href="https://www.google.com/" class="hb" style="display:inline; text-align:center;"><p class=""><pre>This is the book ranked number 2</pre></p></a>
+		<a href="https://www.google.com/" class="hb" style="display:inline; text-align:center;"><p class=""><pre>This is the book ranked number 3</pre></p></a>
+		<a href="https://www.google.com/" class="hb" style="display:inline; text-align:center;"><p class=""><pre>This is the book ranked number 4</pre></p></a>
+		<a href="https://www.google.com/" class="hb" style="display:inline; text-align:center;"><p class=""><pre>This is the book ranked number 5</pre></p></a>
+	</td>
+	</tr>
+	</table> -->
 
 	<table border="0" align='center'>
 		<tr>
@@ -134,7 +167,22 @@
 		echo "<a href='BestSellingBooks/$name1.html' id='HSBN'>",$row['Bname'],"</a><br/><br/><br/><br/><br/><br /><br /><br /><br />";
 	}
 ?>
-		
-
+ 	<script type="text/javascript" src="mainPage.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function(){
+	$("#2").click(function(){
+		document.location.href="mainPage.html"
+	})
+	$("#1").bind("click",function(event){
+		document.body.style.backgroundColor="lightgrey"
+	});
+	$("#1").bind("dblclick",function(){
+		document.body.style.backgroundColor="white"
+	});
+})
+</script>		
+	<footer>
+		<a href="about us.html"><p align="center">About us</p></a>
+	</footer>
 </body>
 </html>
