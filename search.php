@@ -10,7 +10,7 @@
 	<title>Request</title>
 </head>
 <body>
-	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand">
 		<a class="navbar-brand" href="mainPage.php"><img src="images/icon.png" style="height:30px;width:40px"> BookWiki</a>
 	
 		<ul class="navbar-nav mr-auto">
