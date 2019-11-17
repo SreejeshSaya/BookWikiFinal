@@ -1,85 +1,65 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<title>Bookwiki</title>
-	<link rel="stylesheet" type="text/css" href="mainPage.css">
-	<style>
-		.container img { width:1380; height:200;}
-		#HSB { 
-		position:absolute;
-		left:30%;}
-		
-		#HSBN { 
-		position:absolute;
-		left:42%;}
-	</style>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>BookWiki</title>
+	<link rel="shortcut icon" type="images/x-icon" href="images/icon.png" />
+	<link href="bootstrap-4.3.1-dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="conf.css" rel="stylesheet">
 </head>
 <body>
-	<a href="mainPage.html"><h1 class="Websitename">Bookwiki</h1></a>
-	<div class="container">
-		<img src="Books4.jpg" alt="Book image" id="bkgd">
-		<a href="Genre/genreMain.html"> <button class="Genre">Genre</button> </a>
-		<a href="Fantasy.php"> <button class="Biography">Biography</button> </a>
-		<a href="Genre/FictionGenre.html"> <button class="Fiction">Fiction</button> </a>
-		<a href="Genre/romanceGenre.html"> <button class="Romance">Romance</button> </a>
-		<a href="Genre/horrorGenre.html"> <button class="Horror">Horror</button> </a>
-		<a href="Genre/mysteryGenre.html"> <button class="Mystery">Mystery</button> </a>
-		
-		<form method="post" action="search.php">
-			<input type="text" class="Searchbox" size="20" maxlength="100" placeholder="Search for a book" name="s" value="">
-			<input type="submit" class="Search" value="Search">
-		</form>
+	<ul id="contextMenu">
+		<li class="menuItems" id="1" onclick="bg()">change bg</li>
+		<li class="menuItems" id="2">Sign Out</li>
+		<li class="menuItems" id="3">Reload</li>
+		<li class="menuItems" id="4">Print</li>
+		<li class="menuItems" id="5">Inspect</li>
+	</ul>
 
+	<div class="slideshow-container">
 
-		<a href="Signup.html"><button class="su">Sign up</button></a>
-		<a href="Login.html"><button class="li">Login</button></a>
+			<div class="mySlides fade">
+			  <img src="books.jpg" style="width:1480px; height:500px;">
+			  <div class="text">Caption Text</div>
+			</div>
+			
+			<div class="mySlides fade">
+			  <img src="Books4.jpg" style="width:1480px; height:500px;">
+			  <div class="text">Caption Two</div>
+			</div>
+			<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+			<a class="next" onclick="plusSlides(1)">&#10095;</a>
+		</div>
+		<br>
+		<div style="text-align:center">
+		  <span class="dot" onclick="currentSlide(1)"></span> 
+		  <span class="dot" onclick="currentSlide(2)"></span>  
+		</div>
 
-	</div>
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<a class="navbar-brand" href="mainPage.php"><img src="images/icon.png" style="height:3	0px;width:40px"> BookWiki</a> 
 	
-	<!-- <table class="Table">
-		<col width="1500">
-		<col width="500">
-		<tr>
-			<th class="Sell">Hot selling books</th>
-			<th class="News">Announcements/News</th>
-		</tr>
-		<tr>
-			<td class="col1">
-				<a href="" class="hb" style="display:inline; text-align:center;"><p class=""><pre>This is the book ranked number 1</pre></p></a>
-				<a href="" class="hb" style="display:inline; text-align:center;"><p class=""><pre>This is the book ranked number 2</pre></p></a>
-				<a href="" class="hb" style="display:inline; text-align:center;"><p class=""><pre>This is the book ranked number 3</pre></p></a>
-				<a href="" class="hb" style="display:inline; text-align:center;"><p class=""><pre>This is the book ranked number 4</pre></p></a>
-				<a href="" class="hb" style="display:inline; text-align:center;"><p class=""><pre>This is the book ranked number 5</pre></p></a>
-			</td>
-			<td>
-				<a href="" class="links"><p class="article">This is news article number 1</p></a>
-				<a href="" class="links"><p class="article">This is news article number 2</p></a>
-				<a href="" class="links"><p class="article">This is news article number 3</p></a>
-				<a href="" class="links"><p class="article">This is news article number 4</p></a>
-			</td>
-		</tr>
-		<tr></tr>
-		<tr></tr>
-		<tr></tr>
-		<tr></tr>
-		<tr></tr>
-		<tr></tr>
-		<tr></tr>
-		<tr></tr>
-		<tr></tr>
-		<tr></tr>
-		<tr>
-			<th class="Sell">Bestselling books</th>
-		</tr>
-		<tr>
-			<td class="col1">
-				<a href="https://www.google.com/" class="hb" style="display:inline; text-align:center;"><p class=""><pre>This is the book ranked number 1</pre></p></a>
-				<a href="https://www.google.com/" class="hb" style="display:inline; text-align:center;"><p class=""><pre>This is the book ranked number 2</pre></p></a>
-				<a href="https://www.google.com/" class="hb" style="display:inline; text-align:center;"><p class=""><pre>This is the book ranked number 3</pre></p></a>
-				<a href="https://www.google.com/" class="hb" style="display:inline; text-align:center;"><p class=""><pre>This is the book ranked number 4</pre></p></a>
-				<a href="https://www.google.com/" class="hb" style="display:inline; text-align:center;"><p class=""><pre>This is the book ranked number 5</pre></p></a>
-			</td>
-		</tr>
-	</table> -->
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item">
+			<a class="nav-link" href="genre.html">Genre</a>
+			</li>
+			<li class="nav-item">
+			<a class="nav-link" href="Loginrequest.html">Request</a>
+			</li>
+		</ul>
+		<form method="post" action="search.php" class="form-inline my-2 my-lg-0">
+			<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name='s'>
+			<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+		</form>
+	
+		<ul class="navbar-nav my-2 my-lg-0">
+			<li class="nav-item">
+			<a class="nav-link" href="signup.html">New User? Sign Up</a>
+			</li>
+		</ul>
+	</nav>
 
 
 	<table border="0" align='center'>
@@ -102,16 +82,20 @@
 
 	$val=0;
 	$query="SELECT Bname,Aname,Publisher,Year,Genre FROM AllBooks";
+	$query2="SELECT Articlename,Link FROM NewsArticles";
 	$result=$conn->query($query);
+	$result2=$conn->query($query2);
 	while($val!=5)
 	{
 		$val++;
 		$row=$result->fetch_assoc();
+		$row2=$result2->fetch_assoc();
 		$name=$row['Bname'];
+		$linkname=$row2['Link'];
 		$name1=str_replace("'","",$name);
-		echo "<tr><td align:'right'><a href='BestSellingBooks/$name1.html'><img src='BestSellingBooks/$name1.jpg' style='width:150px; height:200px'/></a></td>";
+		echo "<tr><td align:'left'><a href='BestSellingBooks/$name1.html'><img src='BestSellingBooks/$name1.jpg' style='width:150px; height:200px'/></a></td>";
 		echo "<td align:'left'><a href='BestSellingBooks/$name1.html'>",$row['Bname'],"</td>";
-		echo "<td align='right'>",$val,"</td></tr>";
+		echo "<td align='right'><a href='$linkname'>",$row2['Articlename'],"</td></tr>";
 	}
 
 ?>
@@ -146,8 +130,8 @@
 		/* echo "<tr><td align:'left'><a href='BestSellingBooks/$name1.html'><img src='BestSellingBooks/$name1.jpg' style='width:150px; height:200px'/></a></td>";
 		echo "<td align:'left'><a href='BestSellingBooks/$name1.html'>",$row['Bname'],"</td>";
 		echo "<td></td></tr>"; */
-		echo "<a href='BestSellingBooks/$name1.html' ><img src='BestSellingBooks/$name1.jpg' id='HSB' float:left align='center' style='width:150px; height:200px'/></a>";
-		echo "<br /><br /><br /><br /><br /><a href='BestSellingBooks/$name1.html' id='HSBN'>",$row['Bname'],"</a><br/><br/><br/><br/><br/><br />";
+		echo "<a href='BestSellingBooks/$name1.html' ><img src='BestSellingBooks/$name1.jpg' id='HSB' float:left align='center' /></a>";
+		echo "<a href='BestSellingBooks/$name1.html' id='HSBN'>",$row['Bname'],"</a><br/><br/><br/><br/><br/><br /><br /><br /><br />";
 	}
 ?>
 		

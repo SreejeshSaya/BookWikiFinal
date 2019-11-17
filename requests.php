@@ -14,9 +14,13 @@
 	$query="INSERT INTO requests (username,Aname,Bname) VALUES ('$_POST[usname]','$_POST[aname]','$_POST[bname]')";
 	if(mysqli_query($conn,$query))
 	{
-		echo "Succesfully placed the request.";
+/* 		echo "alert('Succesfully placed the request.')";
 		//sleep(5);
-		header("Location:mainPage.php");
+		header("Location:mainPage.php"); */
+		echo "<script>
+		alert('Succesfully placed the request.');
+		window.location.href='mainPage.php';
+		</script>";
 	}
 	
 	//header("Location:mainPage.html"); echo "<tr><td>",$row['Bname'],"</td><td>",$row['Aname'],"</td><td>",$row['Publisher'],"</td><td>",$row['Year'],"</td><td>",$row['Genre'],"</td></tr>";

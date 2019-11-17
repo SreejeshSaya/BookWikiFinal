@@ -1,30 +1,37 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<title>Bookwiki</title>
-	<link rel="stylesheet" type="text/css" href="mainPage.css">
-	<style>
-		.container img { width:1380; height:200;}
-	</style>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="shortcut icon" type="images/x-icon" href="images/icon.png" />
+	<link href="bootstrap-4.3.1-dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="conf.css" rel="stylesheet">
+	<title>Request</title>
 </head>
 <body>
-	<a href="mainPage.html"><h1 class="Websitename">Bookwiki</h1></a>
-	<div class="container">
-		<img src="Books4.jpg" alt="Book image" id="bkgd">
-		<a href="Genre/genreMain.html"> <button class="Genre">Genre</button> </a>
-		<a href="Fantasy.php"> <button class="Biography">Biography</button> </a>
-		<a href="Genre/FictionGenre.html"> <button class="Fiction">Fiction</button> </a>
-		<a href="Genre/romanceGenre.html"> <button class="Romance">Romance</button> </a>
-		<a href="Genre/horrorGenre.html"> <button class="Horror">Horror</button> </a>
-		<a href="Genre/mysteryGenre.html"> <button class="Mystery">Mystery</button> </a>
-		
-		<form method="post" action="search.php">
-			<input type="text" class="Searchbox" size="20" maxlength="100" placeholder="Search for a book" name="s" value="">
-			<input type="submit" class="Search" value="Search">
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<a class="navbar-brand" href="mainPage.php"><img src="images/icon.png" style="height:30px;width:40px"> BookWiki</a>
+	
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item">
+			<a class="nav-link" href="genre.html">Genre</a>
+			</li>
+			<li class="nav-item">
+			<a class="nav-link" href="Loginrequest.html">Request</a>
+			</li>
+		</ul>
+		<form method="post" action="search.php" class="form-inline my-2 my-lg-0">
+			<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name='s'>
+			<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
 		</form>
-		
-		<a href="Signup.html"><button class="su">Sign up</button></a>
-		<a href="Login.html"><button class="li">Login</button></a>
-	</div>
+	
+		<ul class="navbar-nav my-2 my-lg-0">
+			<li class="nav-item">
+			<a class="nav-link" href="signup.html">New User? Sign Up</a>
+			</li>
+		</ul>
+	</nav>
 	
 	<table border="0" align="center">
 		
@@ -43,6 +50,13 @@
 	}
 	
 	$Bookname=$_POST['s'];
+	if($Bookname=='')
+	{
+		echo "<script>
+		alert('Invalid search.');
+		window.location.href='mainPage.php';
+		</script>";
+	}
 	echo "Searched for:$Bookname";
 /* 	$sql="SELECT Bname,Aname,Publisher,Year,Genre FROM AllBooks where Bname LIKE '%$Bookname%'";
 	$query=mysqli_query($conn,$sql);
@@ -62,6 +76,9 @@
 	
 	if($result->num_rows>0)
 	{
+		echo "<script>
+		alert('$result->num_rows search results found.');
+		</script>";
 		while($row=$result->fetch_assoc())
 		{
 				$name=$row['Bname'];
