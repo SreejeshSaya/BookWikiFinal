@@ -42,58 +42,13 @@
 	</ul>	
 	<div id="slider">
 		<div id="box">
-			<img src="book1.jpg">
+			<img id="vishy" src="book1.jpg">
 		</div>
 
 		<!-- buttons for controls slider -->
 		<button id="pi" class="prew fa fa-chevron-left" onclick="prewImage()"></button>
 		<button id="ni" class="next fa fa-chevron-right" onclick="nextImage()"></button>
 	</div>
-	<!-- <table class="Table">
-	<col width="1500">
-	<col width="500">
-	<tr>
-	<th class="Sell">Hot selling books</th>
-	<th class="News">Announcements/News</th>
-	</tr>
-	<tr>
-	<td class="col1">
-		<a href="" class="hb" style="display:inline; text-align:center;"><p class=""><pre>This is the book ranked number 1</pre></p></a>
-		<a href="" class="hb" style="display:inline; text-align:center;"><p class=""><pre>This is the book ranked number 2</pre></p></a>
-		<a href="" class="hb" style="display:inline; text-align:center;"><p class=""><pre>This is the book ranked number 3</pre></p></a>
-		<a href="" class="hb" style="display:inline; text-align:center;"><p class=""><pre>This is the book ranked number 4</pre></p></a>
-		<a href="" class="hb" style="display:inline; text-align:center;"><p class=""><pre>This is the book ranked number 5</pre></p></a>
-	</td>
-	<td>
-		<a href="" class="links"><p class="article">This is news article number 1</p></a>
-		<a href="" class="links"><p class="article">This is news article number 2</p></a>
-		<a href="" class="links"><p class="article">This is news article number 3</p></a>
-		<a href="" class="links"><p class="article">This is news article number 4</p></a>
-	</td>
-	</tr>
-	<tr></tr>
-	<tr></tr>
-	<tr></tr>
-	<tr></tr>
-	<tr></tr>
-	<tr></tr>
-	<tr></tr>
-	<tr></tr>
-	<tr></tr>
-	<tr></tr>
-	<tr>
-	<th class="Sell">Bestselling books</th>
-	</tr>
-	<tr>
-	<td class="col1">
-		<a href="https://www.google.com/" class="hb" style="display:inline; text-align:center;"><p class=""><pre>This is the book ranked number 1</pre></p></a>
-		<a href="https://www.google.com/" class="hb" style="display:inline; text-align:center;"><p class=""><pre>This is the book ranked number 2</pre></p></a>
-		<a href="https://www.google.com/" class="hb" style="display:inline; text-align:center;"><p class=""><pre>This is the book ranked number 3</pre></p></a>
-		<a href="https://www.google.com/" class="hb" style="display:inline; text-align:center;"><p class=""><pre>This is the book ranked number 4</pre></p></a>
-		<a href="https://www.google.com/" class="hb" style="display:inline; text-align:center;"><p class=""><pre>This is the book ranked number 5</pre></p></a>
-	</td>
-	</tr>
-	</table> -->
 
 	<table border="0" align='center'>
 		<tr>
@@ -126,7 +81,7 @@
 		$name=$row['Bname'];
 		$linkname=$row2['Link'];
 		$name1=str_replace("'","",$name);
-		echo "<tr><td align:'left'><a href='BestSellingBooks/$name1.html'><img src='BestSellingBooks/$name1.jpg' style='width:150px; height:200px'/></a></td>";
+		echo "<tr><td align:'left'><a href='BestSellingBooks/$name1.html'><img src='BestSellingBooks/bookCovers/$name1.jpg' style='width:150px; height:200px'/></a></td>";
 		echo "<td align:'left'><a href='BestSellingBooks/$name1.html'>",$row['Bname'],"</td>";
 		echo "<td align='right'><a href='$linkname'>",$row2['Articlename'],"</td></tr>";
 	}
@@ -163,7 +118,7 @@
 		/* echo "<tr><td align:'left'><a href='BestSellingBooks/$name1.html'><img src='BestSellingBooks/$name1.jpg' style='width:150px; height:200px'/></a></td>";
 		echo "<td align:'left'><a href='BestSellingBooks/$name1.html'>",$row['Bname'],"</td>";
 		echo "<td></td></tr>"; */
-		echo "<a href='BestSellingBooks/$name1.html' ><img src='BestSellingBooks/$name1.jpg' id='HSB' float:left align='center' /></a>";
+		echo "<a href='BestSellingBooks/$name1.html' ><img src='BestSellingBooks/bookCovers/$name1.jpg' id='HSB' float:left align='center' /></a>";
 		echo "<a href='BestSellingBooks/$name1.html' id='HSBN'>",$row['Bname'],"</a><br/><br/><br/><br/><br/><br /><br /><br /><br />";
 	}
 ?>
@@ -171,7 +126,7 @@
 	<script type="text/javascript">
 	$(document).ready(function(){
 	$("#2").click(function(){
-		document.location.href="mainPage.html"
+		document.location.href="mainPage.php"
 	})
 	$("#1").bind("click",function(event){
 		document.body.style.backgroundColor="lightgrey"

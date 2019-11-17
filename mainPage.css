@@ -1,4 +1,4 @@
-body { background-color:burlywood;} 
+body { background-color:white;} 
 h1.Websitename {color:black; text-align:center; font-family:fantasy; font-size=100pt;} 
 .container {
     position: relative;
@@ -172,8 +172,8 @@ tr { border:none; }
 
 /* <!-- img.Bookimg {  --> */
      
-div.img{
-    width: 1480px;
+#vishy{
+    width: 1519px;
     height: 500px;
     }
     #slider{
@@ -197,7 +197,7 @@ div.img{
     
     .next{
     border-radius: 10px 0px 0px 10px;
-    margin-left: 1420px;
+    margin-left: 1458px;
     }
     .prew{
     border-radius: 0px 10px 10px 0px;

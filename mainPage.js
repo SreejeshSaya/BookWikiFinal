@@ -7,7 +7,7 @@ function nextImage(){
     }else{
     	i = 1;
     	}
-    slider_content.innerHTML = "<img src="+image[i-1]+".jpg>";
+    slider_content.innerHTML = "<img src="+image[i-1]+".jpg id='vishy'>";
 }
 function prewImage(){
 	if (i<image.length+1 && i>1) {
@@ -15,7 +15,7 @@ function prewImage(){
     }else{
     	i = image.length;
     	}
-    slider_content.innerHTML = "<img src="+image[i-1]+".jpg>";
+    slider_content.innerHTML = "<img src="+image[i-1]+".jpg id='vishy'>";
 }
  setInterval(nextImage , 4000);
 

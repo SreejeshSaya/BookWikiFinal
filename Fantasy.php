@@ -1,39 +1,40 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-	<title>Bookwiki</title>
-	<link rel="stylesheet" type="text/css" href="mainPage.css">
-	<style>
-		.container img { width:1380; height:200;}
-	</style>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<link rel="shortcut icon" type="images/x-icon" href="images/icon.png" />
+	<link href="bootstrap-4.3.1-dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="conf.css" rel="stylesheet">
+	<title>Fantasy</title>
 </head>
 <body>
-	<a href="mainPage.html"><h1 class="Websitename">Bookwiki</h1></a>
-	<div class="container">
-		<img src="Books4.jpg" alt="Book image" id="bkgd">
-		<a href="/Genre/genreMain.html"> <button class="Genre">Genre</button> </a>
-		<a href="Fantasy.php"> <button class="Biography">Biography</button> </a>
-		<a href="Genre/FictionGenre.html"> <button class="Fiction">Fiction</button> </a>
-		<a href="Genre/romanceGenre.html"> <button class="Romance">Romance</button> </a>
-		<a href="Genre/horrorGenre.html"> <button class="Horror">Horror</button> </a>
-		<a href="Genre/mysteryGenre.html"> <button class="Mystery">Mystery</button> </a>
-		
-		<form method="post" action="search.php">
-			<input type="text" class="Searchbox" size="20" maxlength="100" placeholder="Search for a book" name="s" value="">
-			<input type="submit" class="Search" value="Search">
-		</form>
-		
-		<a href="Signup.html"><button class="su">Sign up</button></a>
-		<a href="Login.html"><button class="li">Login</button></a>
-	</div>
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<a class="navbar-brand" href="mainPage.php"><img src="images/icon.png" style="height:30px;width:40px"> BookWiki</a>
 	
-	<table border="1">
-		<tr>
-			<th>Book name</th>
-			<th>Author name</th>
-			<th>Publisher</th>
-			<th>Year</th>
-			<th>Genre</th>
-		</tr>
+		<ul class="navbar-nav mr-auto">
+			<li class="nav-item">
+			<a class="nav-link" href="genre.html">Genre</a>
+			</li>
+			<li class="nav-item">
+			<a class="nav-link" href="Loginrequest.html">Request</a>
+			</li>
+		</ul>
+		<form method="post" action="search.php" class="form-inline my-2 my-lg-0">
+			<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name='s'>
+			<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+		</form>
+	
+		<ul class="navbar-nav my-2 my-lg-0">
+			<li class="nav-item">
+			<a class="nav-link" href="signup.html">New User? Sign Up</a>
+			</li>
+		</ul>
+	</nav>
+	
+	<h1 style="font-family:Helvetica; text-align:center;">Fantasy</h1>
+	<table border="0" align="center">
 <?php
 	//to list out all the books under fantasy genre
 	$servername = "localhost";
@@ -54,8 +55,10 @@
 	{
 		while($row=$result->fetch_assoc())//returns that particular row from the list of rows obtained through the query as an array of attributes(think of it like a dictionary). 
 		{
-				$name=$row['Bname'];//Obtaining the Book name out of that row.
-				echo "<tr><td><a href='$name.html'>",$row['Bname'],"</a></td><td>",$row['Aname'],"</td><td>",$row['Publisher'],"</td><td>",$row['Year'],"</td><td>",$row['Genre'],"</td></tr>";
+				$name=$row['Bname'];
+				$name1=str_replace("'","",$name);
+				echo "<tr><td align:'center'><a href='BestSellingBooks/$name1.html'><img src='BestSellingBooks/bookCovers/$name1.jpg' style='width:150px; height:200px'/></a></td>";
+				echo "<td><a href='BestSellingBooks/$name1.html'>",$row['Bname'],"</a><br />",$row['Aname'],"<br />",$row['Genre'],"</td></tr>";
 		}
 	}
 	else

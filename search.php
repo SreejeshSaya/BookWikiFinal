@@ -85,7 +85,7 @@
 				/* $name1=$row['Bname']; */
 				$name1=str_replace("'","",$name);//In order to not having conflicting single and double quotes in the echo statements, We're removing all single quotes for simplicity.
 				//echo "<tr><td><a href='$name.html'>",$row['Bname'],"</a></td><td>",$row['Aname'],"</td><td>",$row['Publisher'],"</td><td>",$row['Year'],"</td><td>",$row['Genre'],"</td></tr>";
-				echo "<tr><td align:'center'><a href='BestSellingBooks/$name1.html'><img src='BestSellingBooks/$name1.jpg' style='width:150px; height:200px'/></a></td>";
+				echo "<tr><td align:'center'><a href='BestSellingBooks/$name1.html'><img src='BestSellingBooks/bookCovers/$name1.jpg' style='width:150px; height:200px'/></a></td>";
 				//echo "<tr><td><a href='BestSellingBooks/$name.html'><img src='BestSellingBooks/Harry Potter and the Sorcerer's Stone.jpg' /></a></td><br />";
 				echo "<td><a href='BestSellingBooks/$name1.html'>",$row['Bname'],"</a><br />",$row['Aname'],"<br />",$row['Genre'],"</td></tr>";
 		}
