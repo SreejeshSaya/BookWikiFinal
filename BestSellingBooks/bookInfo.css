@@ -4,10 +4,6 @@
     padding: 20px 50px;
 }
 
-.bookMetadata > * {
-    border: 1px solid blue;
-}
-
 .bookCover {
     grid-row: 1/7;
     grid-column: 1/2;
