@@ -19,9 +19,10 @@
 	
 	if (mysqli_query($conn,$sql))//checks if the query worked properly on the table 
 	{
-		echo "Data inserted.";
-		header("Location:Login.html");
-		//die('Error: ' . mysqli_error());
+		echo "<script>
+		alert('Successfully Signed up!');
+		window.location.href='mainPage.php';
+		</script>";
 	}
 	echo "Error.";
 	

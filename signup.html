@@ -11,25 +11,25 @@
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-		<a class="navbar-brand" href="mainPage.html"><img src="images/icon.png" style="height:30px;width:40px"> BookWiki</a> 
+		<a class="navbar-brand" href="mainPage.php"><img src="images/icon.png" style="height:30px;width:40px"> BookWiki</a> 
 	
 		<ul class="navbar-nav mr-auto">
 			<li class="nav-item">
-			<a class="nav-link" href="genre.html">Genre</a>
+			<a class="nav-link" href="Logingenre.html">Genre</a>
 			</li>
 			<li class="nav-item">
-			<a class="nav-link" href="request.html">Request</a>
+			<a class="nav-link" href="Loginrequest.html">Request</a>
 			</li>
 		</ul>
 		<form method="post" action="search.php" class="form-inline my-2 my-lg-0">
-			<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+			<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name='s'>
 			<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
 		</form>
 	</nav>
 
 	
-	<h1 style="color:Steelblue">Sign up</h1>
-    <form method="post" action="newAccount.php" >
+	<h1 style="color:Steelblue; text-align: center;">Sign up</h1>
+    <form method="post" action="newAccount.php" style="text-align: center">
 		First name <input type="text" name="fname" class="un"> <br /><br />
 		Last name <input type="text" name="lname" class="un"> <br /><br />
 		Email id <input type="text" name="email" class="un"> <br /><br />
