@@ -1,0 +1,58 @@
+.bookMetadata {
+    display: grid;
+    grid-template-rows:  45px 32px 30px 25px 25px auto;
+    padding: 20px 50px;
+}
+
+.bookMetadata > * {
+    border: 1px solid blue;
+}
+
+.bookCover {
+    grid-row: 1/7;
+    grid-column: 1/2;
+    margin-right: 25px;
+    height: 500px;
+}
+
+.title {
+    grid-row: 1/2;
+    grid-column: 2/3;
+    font-size: 30px;
+}
+
+.author {
+    grid-row: 2/3;
+    grid-column: 2/3;
+    font-size: 22px;
+}
+
+.publisher {
+    grid-row: 3/4;
+    grid-column: 2/3;
+    font-size: 20px;
+}
+
+.genre {
+    grid-row: 4/5;
+    grid-column: 2/3;
+    font-size: 18px;
+    
+}
+
+.releaseYear {
+    grid-row: 5/6;
+    grid-column: 2/3;
+    font-size: 16px;
+
+}
+
+.synopsis {
+    margin-top: 25px;
+    grid-row: 6/7;
+    grid-column: 2/3;
+}
+
+.Quotes {
+
+}
