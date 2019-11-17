@@ -7,7 +7,9 @@
 	<title>Sign Up</title>
 	<link rel="shortcut icon" type="images/x-icon" href="images/icon.png" />
 	<link href="bootstrap-4.3.1-dist/css/bootstrap.min.css" rel="stylesheet">
+	<link href="context.css" rel="stylesheet">
 	<link href="conf.css" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -27,6 +29,11 @@
 		</form>
 	</nav>
 
+	<ul id="contextMenu">
+		<li class="menuItems" id="1">change bg</li>
+		<!-- <li class="menuItems" id="2">Sign Out</li> -->
+		<li class="menuItems" id="2">Reload</li>
+	</ul>
 	
 	<h1 style="color:Steelblue; text-align: center;">Sign up</h1>
     <form method="post" action="newAccount.php" style="text-align: center">
@@ -37,6 +44,20 @@
 		Password <input type="password" name="pass" class="pw"><br />
 		<p><pre></pre></p>
 		<input type="submit" value="Sign Up" class="actionButton">
-    </form>
+	</form>
+	<script src="context.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("#2").click(function(){
+				document.location.href="signup.html"
+			})
+			$("#1").bind("click",function(event){
+				document.body.style.backgroundColor="lightgrey"
+			});
+			$("#1").bind("dblclick",function(){
+				document.body.style.backgroundColor="white"
+			});
+		})
+	</script>
 </body>
 </html>

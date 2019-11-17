@@ -7,6 +7,7 @@
 	<link rel="shortcut icon" type="images/x-icon" href="images/icon.png" />
 	<link href="bootstrap-4.3.1-dist/css/bootstrap.min.css" rel="stylesheet">
 	<link href="conf.css" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<title>Login</title>
 </head>
 <body>
@@ -32,12 +33,30 @@
 			</li>
 		</ul>
 	</nav>
-	
+	<ul id="contextMenu">
+		<li class="menuItems" id="1">change bg</li>
+		<!-- <li class="menuItems" id="2">Sign Out</li> -->
+		<li class="menuItems" id="2">Reload</li>
+	</ul>
 	<h1 style="color:steelblue; text-align: center;">Login</h1>
     <form method="post" action="checkrequest.php" style="text-align: center;">
         Username <input type="text" name="usname" class="un" ><br /><br />
 		Password <input type="password" name="pass" class="pw" ><br /><br />
 		<input type="submit" value="Login" class="actionButton" >
-    </form>
+	</form>
+	<script src="context.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("#2").click(function(){
+				document.location.href="signup.html"
+			})
+			$("#1").bind("click",function(event){
+				document.body.style.backgroundColor="lightgrey"
+			});
+			$("#1").bind("dblclick",function(){
+				document.body.style.backgroundColor="white"
+			});
+		})
+	</script>
 </body>
 </html>
